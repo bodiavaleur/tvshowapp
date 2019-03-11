@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { ShowCard } from '../../ui/atoms';
-import { CarouselStyle } from '../../ui/molecules';
+import { CarouselStyle } from '../../ui/pages';
 
 export class ShowsCarousel extends Component {
   constructor(props) {

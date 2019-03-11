@@ -6,7 +6,7 @@ const axs = axios.create({
 
 export const getTvShows = (type, cb, page = 1) =>
   /* Get a list of tv shows 
-      type: latest | on_the_air | popular | top_rated
+      type: airing_today | on_the_air | popular | top_rated
   */
   axs.get(`/tv/${type}?page=${page}`).then(res => cb(res.data));
 

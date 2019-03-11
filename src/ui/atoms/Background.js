@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 export const Background = styled.div`
   position: absolute;
@@ -11,11 +12,11 @@ export const Background = styled.div`
   transform: scale(1.2);
 `;
 
-export const BackgroundDark = styled.div`
+export const BackgroundDark = styled(animated.div)`
   position: absolute;
   top: 125px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 3;
 `;

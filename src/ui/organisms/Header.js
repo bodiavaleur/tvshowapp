@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
-export const Header = styled.header`
-  position: fixed;
+export const Header = styled(animated.div)`
+  position: relative;
   width: 100vw;
   height: 125px;
-  top: 0;
-  left: 0;
   background: rgba(255, 255, 255, 0.7);
+`;
+
+export const HeaderWrapper = styled(animated.header)`
+  position: relative;
 `;

@@ -7,7 +7,7 @@ const initialState = {
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case TOGGLE_TOP_MENU:
-      return { ...state, isTopMenuOpen: payload };
+      return { ...state, isTopMenuOpen: !state.isTopMenuOpen };
 
     default:
       return state;

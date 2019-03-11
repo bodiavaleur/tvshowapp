@@ -1,45 +1,18 @@
 import React, { Component } from 'react';
 import { Background, Container } from './ui/atoms/';
-import { createGlobalStyle } from 'styled-components';
-import PopularShows from './components/organisms/PopularShows';
+import ShowsThread from './components/organisms/ShowsThread';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { MenuButton } from './components/atoms/';
-import { TopMenu } from './components/organisms/TopMenu';
-import { connect } from 'react-redux';
-import { toggleTopMenu } from './redux/uiActionsCreators';
+import { GlobalStyle } from './ui/pages';
+import TopMenu from './components/organisms/TopMenu';
+import {
+  getMostPopular,
+  getLatest,
+  getOnTheAir,
+  getTopRated,
+  getAiringToday
+} from './redux/actionsCreators';
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    font-size: 16px;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  }
-
-  html, #root, main {
-    overflow: hidden;
-  }
-
-  main {
-    width: 100vw;
-    height: 100vh;
-  }
-`;
-
-class TvShowApp extends Component {
-  constructor(props) {
-    super(props);
-
-    this.closeTopMenu = this.closeTopMenu.bind(this);
-    this.openTopMenu = this.openTopMenu.bind(this);
-  }
-
-  closeTopMenu() {
-    return this.props.dispatch(toggleTopMenu(false));
-  }
-
-  openTopMenu() {
-    return this.props.dispatch(toggleTopMenu(true));
-  }
-
+export default class TvShowApp extends Component {
   render() {
     return (
       <Router>
@@ -47,22 +20,56 @@ class TvShowApp extends Component {
           <GlobalStyle />
           <Background />
 
-          {this.props.isTopMenuOpen ? (
-            <TopMenu closeTopMenu={this.closeTopMenu} />
-          ) : null}
+          <TopMenu />
 
-          <MenuButton onClick={() => this.openTopMenu()} />
           <Container>
-            <Route path="/popular" component={PopularShows} />
+            <Route
+              path="/popular"
+              render={() => (
+                <ShowsThread
+                  type="popular"
+                  heading="Popular TV Shows"
+                  dispatchAction={getMostPopular}
+                  stateData="mostPopularData"
+                />
+              )}
+            />
+            <Route
+              path="/toprated"
+              render={() => (
+                <ShowsThread
+                  type="top_rated"
+                  heading="Top Rated"
+                  dispatchAction={getTopRated}
+                  stateData="topRatedData"
+                />
+              )}
+            />
+            <Route
+              path="/airtoday"
+              render={() => (
+                <ShowsThread
+                  type="airing_today"
+                  heading="Airing Today"
+                  dispatchAction={getAiringToday}
+                  stateData="airingTodayData"
+                />
+              )}
+            />
+            <Route
+              path="/air"
+              render={() => (
+                <ShowsThread
+                  type="on_the_air"
+                  heading="On The Air"
+                  dispatchAction={getOnTheAir}
+                  stateData="onTheAirData"
+                />
+              )}
+            />
           </Container>
         </main>
       </Router>
     );
   }
 }
-
-const mapStateToProps = state => ({
-  isTopMenuOpen: state.uiReducer.isTopMenuOpen
-});
-
-export default connect(mapStateToProps)(TvShowApp);

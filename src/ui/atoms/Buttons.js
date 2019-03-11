@@ -14,4 +14,16 @@ export const ButtonMenu = styled(Button)`
   margin-left: auto;
   margin-right: auto;
   filter: invert(1);
+  z-index: 4;
+
+  ${({ menuIsOpen }) =>
+    menuIsOpen &&
+    `
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: none;
+    transform: rotate(180deg);
+  `}
 `;

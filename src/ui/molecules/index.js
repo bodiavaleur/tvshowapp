@@ -1,1 +1,0 @@
-export { CarouselStyle } from './CarouselStyle';
