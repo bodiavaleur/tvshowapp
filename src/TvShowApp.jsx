@@ -6,7 +6,6 @@ import { GlobalStyle } from './ui/pages';
 import TopMenu from './components/organisms/TopMenu';
 import {
   getMostPopular,
-  getLatest,
   getOnTheAir,
   getTopRated,
   getAiringToday
