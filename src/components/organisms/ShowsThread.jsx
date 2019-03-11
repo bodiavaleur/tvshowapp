@@ -12,7 +12,6 @@ class ShowsThread extends Component {
   }
 
   render() {
-    console.log('this.props :', this.props[`${this.props.stateData}`]);
     return (
       <section>
         <PageHeading>{this.props.heading}</PageHeading>
