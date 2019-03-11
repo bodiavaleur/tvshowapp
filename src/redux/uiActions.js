@@ -1,1 +1,2 @@
 export const TOGGLE_TOP_MENU = 'TOGGLE_TOP_MENU';
+export const TOGGLE_DETAILS = 'TOGGLE_DETAILS';
