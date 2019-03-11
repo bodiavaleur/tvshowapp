@@ -2,7 +2,8 @@ import {
   GET_MOST_POPULAR,
   GET_ON_THE_AIR,
   GET_TOP_RATED,
-  GET_AIRING_TODAY
+  GET_AIRING_TODAY,
+  SET_SELECTED_SHOW
 } from './actions';
 
 // FIXME: refactor
@@ -24,5 +25,10 @@ export const getOnTheAir = payload => ({
 
 export const getTopRated = payload => ({
   type: GET_TOP_RATED,
+  payload
+});
+
+export const setSelected = payload => ({
+  type: SET_SELECTED_SHOW,
   payload
 });

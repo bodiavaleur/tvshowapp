@@ -2,14 +2,16 @@ import {
   GET_MOST_POPULAR,
   GET_AIRING_TODAY,
   GET_ON_THE_AIR,
-  GET_TOP_RATED
+  GET_TOP_RATED,
+  SET_SELECTED_SHOW
 } from '../actions';
 
 const initialState = {
   mostPopularData: [],
   airingTodayData: [],
   onTheAirData: [],
-  topRatedData: []
+  topRatedData: [],
+  selectedShow: []
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -25,6 +27,9 @@ export default (state = initialState, { type, payload }) => {
 
     case GET_TOP_RATED:
       return { ...state, topRatedData: payload };
+
+    case SET_SELECTED_SHOW:
+      return { ...state, selectedShow: payload };
 
     default:
       return state;
