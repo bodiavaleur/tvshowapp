@@ -14,7 +14,7 @@ export const ButtonMenu = styled(Button)`
   margin-left: auto;
   margin-right: auto;
   filter: invert(1);
-  z-index: 4;
+  z-index: 10;
 
   ${({ menuIsOpen }) =>
     menuIsOpen &&

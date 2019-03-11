@@ -3,6 +3,7 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { ShowCard } from '../../ui/atoms';
 import { CarouselStyle } from '../../ui/pages';
+import { Link } from 'react-router-dom';
 
 export class ShowsCarousel extends Component {
   constructor(props) {
@@ -26,7 +27,11 @@ export class ShowsCarousel extends Component {
       case this.state.current + 2:
         // Middle card
         // [] [] [*] [] []
-        return <ShowCard lg key={idx} poster={poster} />;
+        return (
+          <Link to={`/details/${show.id}`}>
+            <ShowCard lg key={idx} poster={poster} />;
+          </Link>
+        );
       case this.state.current + 1:
         // Left card from middle
         // [] [*] [] [] []

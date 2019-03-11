@@ -16,7 +16,7 @@ export const getDetails = (tvId, cb) =>
 
 export const getCast = (tvId, cb) =>
   /* Get cast of the show */
-  axs.get(`/tv/${tvId}/credits`).then(res => cb(res.data.cast));
+  axs.get(`/tv/${tvId}/credits`).then(res => cb(res.data.cast.slice(0, 5)));
 
 export const getExternalLinks = (tvId, cb) =>
   /* Get external links (twitter, imdb, instagram, etc.) */

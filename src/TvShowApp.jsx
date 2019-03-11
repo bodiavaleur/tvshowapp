@@ -10,6 +10,7 @@ import {
   getTopRated,
   getAiringToday
 } from './redux/actionsCreators';
+import { ShowDetails } from './components/organisms';
 
 export default class TvShowApp extends Component {
   render() {
@@ -57,14 +58,19 @@ export default class TvShowApp extends Component {
             />
             <Route
               path="/air"
-              render={() => (
+              render={props => (
                 <ShowsThread
+                  {...props}
                   type="on_the_air"
                   heading="On The Air"
                   dispatchAction={getOnTheAir}
                   stateData="onTheAirData"
                 />
               )}
+            />
+            <Route
+              path="/details/:id"
+              render={props => <ShowDetails {...props} />}
             />
           </Container>
         </main>

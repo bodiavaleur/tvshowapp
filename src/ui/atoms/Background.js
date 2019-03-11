@@ -5,8 +5,12 @@ export const Background = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-34609.jpg);
+  background-image: url(${props =>
+    props.bg
+      ? props.bg
+      : 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-34609.jpg'});
   background-size: cover;
+  background-position: 50% 50%;
   z-index: -1;
   filter: blur(15px);
   transform: scale(1.2);
@@ -17,6 +21,16 @@ export const BackgroundDark = styled(animated.div)`
   top: 125px;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 3;
+
+  ${({ full }) =>
+    full &&
+    `
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+`}
 `;
