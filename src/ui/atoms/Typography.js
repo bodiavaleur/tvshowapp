@@ -20,6 +20,13 @@ export const Title = styled.h2`
   opacity: 0.9;
 `;
 
+export const TitleSmall = styled(Title)`
+  margin-top: 10px;
+  align-self: flex-start;
+  color: black;
+  font-size: 1.75rem;
+`;
+
 export const Info = styled.span`
   display: inline-block;
   line-height: 40px;

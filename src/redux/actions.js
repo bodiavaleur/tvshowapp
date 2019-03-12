@@ -1,5 +1,5 @@
-export const GET_MOST_POPULAR = 'GET_MOST_POPULAR';
-export const GET_AIRING_TODAY = 'GET_AIRING_TODAY';
-export const GET_ON_THE_AIR = 'GET_ON_THE_AIR';
-export const GET_TOP_RATED = 'GET_TOP_RATED';
-export const SET_SELECTED_SHOW = 'SET_SELECTED_SHOW';
+export const POPULAR = 'POPULAR';
+export const AIRING_TODAY = 'AIRING_TODAY';
+export const ON_THE_AIR = 'ON_THE_AIR';
+export const TOP_RATED = 'TOP_RATED';
+export const SEARCH = 'SEARCH';

@@ -46,3 +46,10 @@ export const getSimilarShows = (tvId, cb, page = 1) =>
 export const getVideos = (tvId, cb) =>
   /* Get videos for a show */
   axs.get(`/tv/${tvId}/videos`).then(res => cb(res.data.results));
+
+export const searchTvShow = (query, cb, page = 1) =>
+  /* Search TV show by query */
+  axs
+    .get(`/search/tv?query=${query}&page=${page}`)
+    .then(res => cb(res.data))
+    .catch(err => cb([]));

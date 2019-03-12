@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { Background, Container } from './ui/atoms/';
-import ShowsThread from './components/organisms/ShowsThread';
+import ShowsThread from './components/pages/ShowsThread';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { GlobalStyle } from './ui/pages';
-import TopMenu from './components/organisms/TopMenu';
+import TopMenu from './components/pages/TopMenu';
 import {
-  getMostPopular,
-  getOnTheAir,
-  getTopRated,
-  getAiringToday
+  getPopular,
+  onTheAir,
+  topRated,
+  airingToday
 } from './redux/actionsCreators';
-import { ShowDetails } from './components/organisms';
+import { ShowDetails } from './components/pages';
+import Search from './components/pages/Search';
 
 export default class TvShowApp extends Component {
   render() {
@@ -29,8 +30,8 @@ export default class TvShowApp extends Component {
                 <ShowsThread
                   type="popular"
                   heading="Popular TV Shows"
-                  dispatchAction={getMostPopular}
-                  stateData="mostPopularData"
+                  dispatchAction={getPopular}
+                  stateData="popular"
                 />
               )}
             />
@@ -40,8 +41,8 @@ export default class TvShowApp extends Component {
                 <ShowsThread
                   type="top_rated"
                   heading="Top Rated"
-                  dispatchAction={getTopRated}
-                  stateData="topRatedData"
+                  dispatchAction={topRated}
+                  stateData="topRated"
                 />
               )}
             />
@@ -51,8 +52,8 @@ export default class TvShowApp extends Component {
                 <ShowsThread
                   type="airing_today"
                   heading="Airing Today"
-                  dispatchAction={getAiringToday}
-                  stateData="airingTodayData"
+                  dispatchAction={airingToday}
+                  stateData="airingToday"
                 />
               )}
             />
@@ -63,8 +64,8 @@ export default class TvShowApp extends Component {
                   {...props}
                   type="on_the_air"
                   heading="On The Air"
-                  dispatchAction={getOnTheAir}
-                  stateData="onTheAirData"
+                  dispatchAction={onTheAir}
+                  stateData="onTheAir"
                 />
               )}
             />
@@ -72,6 +73,7 @@ export default class TvShowApp extends Component {
               path="/details/:id"
               render={props => <ShowDetails {...props} />}
             />
+            <Route path="/search" component={Search} />
           </Container>
         </main>
       </Router>

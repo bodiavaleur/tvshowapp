@@ -3,8 +3,10 @@ import { animated } from 'react-spring';
 
 export const Background = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 105%;
+  height: 105%;
+  top: -2.5%;
+  left: -2.5%;
   background-image: url(${props =>
     props.bg
       ? props.bg
@@ -13,7 +15,6 @@ export const Background = styled.div`
   background-position: 50% 50%;
   z-index: -1;
   filter: blur(15px);
-  transform: scale(1.2);
 `;
 
 export const BackgroundDark = styled(animated.div)`

@@ -22,7 +22,9 @@ export class ShowDetails extends Component {
   }
 
   mapToItem(dataArr) {
-    return dataArr.map(item => <DetailsItem>{item.name}</DetailsItem>);
+    return dataArr.map((item, idx) => (
+      <DetailsItem key={idx}>{item.name}</DetailsItem>
+    ));
   }
 
   componentDidMount() {

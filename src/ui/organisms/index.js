@@ -7,3 +7,4 @@ export {
   DetailsItem,
   MainDetails
 } from './Details';
+export { SearchList } from './SearchList';

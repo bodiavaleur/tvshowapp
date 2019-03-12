@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, HeaderWrapper } from '../../ui/organisms';
-import { MenuButton } from '../atoms';
+import { MenuButton, IconLink } from '../atoms';
 import { connect } from 'react-redux';
 import { toggleTopMenu } from '../../redux/uiActionsCreators';
 import { Transition } from 'react-spring/renderprops';
@@ -31,6 +31,7 @@ class TopMenu extends Component {
               <React.Fragment>
                 <Header style={props}>
                   <Navbar />
+                  <IconLink to="/search" label="Search" icon="fa-search" />
                 </Header>
                 <BackgroundDark style={props} />
               </React.Fragment>

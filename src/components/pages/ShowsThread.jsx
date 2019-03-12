@@ -5,10 +5,18 @@ import { connect } from 'react-redux';
 import { getTvShows } from '../../utils';
 
 class ShowsThread extends Component {
+  constructor(props) {
+    super(props);
+
+    this.reduxData = this.props[`${this.props.stateData}`];
+  }
+
   componentDidMount() {
-    getTvShows(this.props.type, data =>
-      this.props.dispatch(this.props.dispatchAction(data.results))
-    );
+    return !!this.reduxData.length
+      ? null
+      : getTvShows(this.props.type, data =>
+          this.props.dispatch(this.props.dispatchAction(data.results))
+        );
   }
 
   render() {
@@ -22,10 +30,10 @@ class ShowsThread extends Component {
 }
 
 const mapStateToProps = state => ({
-  mostPopularData: state.tvshowsReducer.mostPopularData,
-  airingTodayData: state.tvshowsReducer.airingTodayData,
-  onTheAirData: state.tvshowsReducer.onTheAirData,
-  topRatedData: state.tvshowsReducer.topRatedData
+  popular: state.tvshowsReducer.popular,
+  airingToday: state.tvshowsReducer.airingToday,
+  onTheAir: state.tvshowsReducer.onTheAir,
+  topRated: state.tvshowsReducer.topRated
 });
 
 export default connect(mapStateToProps)(ShowsThread);

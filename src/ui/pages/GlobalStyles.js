@@ -12,12 +12,14 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   }
 
-  html, #root, main {
+  body {
     overflow: hidden;
   }
 
   main {
     width: 100vw;
     height: 100vh;
+    position: fixed;
+    
   }
 `;

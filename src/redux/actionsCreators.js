@@ -1,34 +1,34 @@
 import {
-  GET_MOST_POPULAR,
-  GET_ON_THE_AIR,
-  GET_TOP_RATED,
-  GET_AIRING_TODAY,
-  SET_SELECTED_SHOW
+  POPULAR,
+  ON_THE_AIR,
+  TOP_RATED,
+  AIRING_TODAY,
+  SEARCH
 } from './actions';
 
 // FIXME: refactor
 
-export const getMostPopular = payload => ({
-  type: GET_MOST_POPULAR,
+export const getPopular = payload => ({
+  type: POPULAR,
   payload
 });
 
-export const getAiringToday = payload => ({
-  type: GET_AIRING_TODAY,
+export const airingToday = payload => ({
+  type: AIRING_TODAY,
   payload
 });
 
-export const getOnTheAir = payload => ({
-  type: GET_ON_THE_AIR,
+export const onTheAir = payload => ({
+  type: ON_THE_AIR,
   payload
 });
 
-export const getTopRated = payload => ({
-  type: GET_TOP_RATED,
+export const topRated = payload => ({
+  type: TOP_RATED,
   payload
 });
 
-export const setSelected = payload => ({
-  type: SET_SELECTED_SHOW,
+export const searchData = payload => ({
+  type: SEARCH,
   payload
 });

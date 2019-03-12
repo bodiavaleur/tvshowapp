@@ -1,35 +1,38 @@
 import {
-  GET_MOST_POPULAR,
-  GET_AIRING_TODAY,
-  GET_ON_THE_AIR,
-  GET_TOP_RATED,
-  SET_SELECTED_SHOW
+  POPULAR,
+  AIRING_TODAY,
+  ON_THE_AIR,
+  TOP_RATED,
+  SEARCH
 } from '../actions';
 
 const initialState = {
-  mostPopularData: [],
-  airingTodayData: [],
-  onTheAirData: [],
-  topRatedData: [],
-  selectedShow: []
+  popular: [],
+  airingToday: [],
+  onTheAir: [],
+  topRated: [],
+  selected: [],
+  search: []
 };
+
+// FIXME: refactor
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case GET_MOST_POPULAR:
-      return { ...state, mostPopularData: payload };
+    case POPULAR:
+      return { ...state, popular: payload };
 
-    case GET_AIRING_TODAY:
-      return { ...state, airingTodayData: payload };
+    case AIRING_TODAY:
+      return { ...state, airingToday: payload };
 
-    case GET_ON_THE_AIR:
-      return { ...state, onTheAirData: payload };
+    case ON_THE_AIR:
+      return { ...state, onTheAir: payload };
 
-    case GET_TOP_RATED:
-      return { ...state, topRatedData: payload };
+    case TOP_RATED:
+      return { ...state, topRated: payload };
 
-    case SET_SELECTED_SHOW:
-      return { ...state, selectedShow: payload };
+    case SEARCH:
+      return { ...state, search: payload };
 
     default:
       return state;
