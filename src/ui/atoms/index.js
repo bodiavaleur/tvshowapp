@@ -11,4 +11,4 @@ export {
 } from './Typography';
 export { ButtonMenu } from './Buttons';
 export { StyledNavLink, StyledNavbarLink } from './Links';
-export { InputSearch } from './Inputs';
+export { InputSearch, InputSearchWrapper, InputLabel } from './Inputs';

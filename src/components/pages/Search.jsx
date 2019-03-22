@@ -5,7 +5,6 @@ import { AnimInput } from '../atoms';
 import { searchTvShow } from '../../utils';
 import { connect } from 'react-redux';
 import { searchData } from '../../redux/actionsCreators';
-import { Link } from 'react-router-dom';
 
 class Search extends Component {
   constructor(props) {
@@ -25,7 +24,6 @@ class Search extends Component {
       this.setState({
         searchHasValue: hasValue
       });
-
       this.props.dispatch(searchData(data.results));
     });
   }
@@ -55,6 +53,7 @@ class Search extends Component {
 
 const mapStateToProps = state => ({
   search: state.tvshowsReducer.search
+  // searchHasValue: state.searchTvShow.search
 });
 
 export default connect(mapStateToProps)(Search);

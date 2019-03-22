@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spring } from 'react-spring/renderprops';
-import { InputSearch } from '../../ui/atoms';
+import { InputSearch, InputSearchWrapper, InputLabel } from '../../ui/atoms';
 
 export const AnimInput = ({ handleOnChange, animState, value }) => {
   return (
@@ -9,11 +9,19 @@ export const AnimInput = ({ handleOnChange, animState, value }) => {
       to={{ top: `${animState ? 0 : 40}%` }}
       reset={!animState}>
       {props => (
-        <InputSearch
-          style={props}
-          placeholder="Search"
-          onChange={handleOnChange}
-        />
+        <InputSearchWrapper style={props}>
+          <InputSearch placeholder="Search" onChange={handleOnChange} />
+          <Spring
+            from={{ width: `${animState ? 100 : 0}%` }}
+            to={{ width: `${animState ? 0 : 100}%` }}
+            reset={!animState}>
+            {props => (
+              <InputLabel style={props}>
+                Type here the title of TV show{' '}
+              </InputLabel>
+            )}
+          </Spring>
+        </InputSearchWrapper>
       )}
     </Spring>
   );

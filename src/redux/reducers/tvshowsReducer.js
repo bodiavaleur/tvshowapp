@@ -18,6 +18,7 @@ const initialState = {
 // FIXME: refactor
 
 export default (state = initialState, { type, payload }) => {
+  console.log('payload', payload);
   switch (type) {
     case POPULAR:
       return { ...state, popular: payload };
@@ -32,7 +33,8 @@ export default (state = initialState, { type, payload }) => {
       return { ...state, topRated: payload };
 
     case SEARCH:
-      return { ...state, search: payload };
+      const value = payload ? payload : [];
+      return { ...state, search: value };
 
     default:
       return state;

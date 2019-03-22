@@ -9,7 +9,7 @@ import { Navbar } from '../molecules';
 
 class TopMenu extends Component {
   toggleTopMenu() {
-    return this.props.dispatch(toggleTopMenu());
+    return () => this.props.dispatch(toggleTopMenu());
   }
 
   render() {
@@ -17,7 +17,7 @@ class TopMenu extends Component {
     return (
       <HeaderWrapper>
         <MenuButton
-          onClick={() => this.toggleTopMenu()}
+          onClick={this.toggleTopMenu()}
           menuIsOpen={this.props.isTopMenuOpen}
         />
         <Transition
@@ -33,7 +33,7 @@ class TopMenu extends Component {
                   <Navbar />
                   <IconLink to="/search" label="Search" icon="fa-search" />
                 </Header>
-                <BackgroundDark style={props} />
+                <BackgroundDark style={props} onClick={this.toggleTopMenu()} />
               </React.Fragment>
             ))
           }

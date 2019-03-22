@@ -4,7 +4,7 @@ export const ShowCard = styled.div`
   perspective: 600px;
   margin: auto 0;
   position: relative;
-  width: 100%;
+  width: 250px;
   height: 375px;
 
   &::before {
@@ -15,7 +15,7 @@ export const ShowCard = styled.div`
     transform: rotateY(-30deg);
     background-image: url(${props => props.poster});
     background-size: cover;
-    background-position: center center;
+    background-size: contain;
     background-repeat: no-repeat;
     border-radius: 5px;
     box-shadow: 0 0 30px black;

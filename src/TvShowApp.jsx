@@ -3,7 +3,7 @@ import { Background, Container } from './ui/atoms/';
 import ShowsThread from './components/pages/ShowsThread';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { GlobalStyle } from './ui/pages';
-import TopMenu from './components/pages/TopMenu';
+import TopMenu from './components/organisms/TopMenu';
 import {
   getPopular,
   onTheAir,
