@@ -4,8 +4,8 @@ export const ShowCard = styled.div`
   perspective: 600px;
   margin: auto 0;
   position: relative;
-  width: 250px;
-  height: 375px;
+  width: 245px;
+  height: 368px;
 
   &::before {
     content: '';
